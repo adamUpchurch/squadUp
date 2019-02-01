@@ -1,7 +1,5 @@
 const   mongoose    = require('mongoose'),
-        validator   = require('validator'),
-        _           = require('lodash'),
-        bcrypt      = require('bcryptjs');
+        validator   = require('validator');
 
 var Schema = mongoose.Schema;
 
@@ -26,7 +24,7 @@ var StreamerSchema = new Schema({
         }
     },
     squad: {
-        type: Schema.Types.ObjectID,
+        type: Schema.Types.ObjectId,
         ref: 'Squad'
     },
     password: {
@@ -47,4 +45,4 @@ var StreamerSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('Streamer', StreamerSchema)
+module.exports.Streamer = mongoose.model('Streamer', StreamerSchema)

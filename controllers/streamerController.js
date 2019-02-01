@@ -1,6 +1,9 @@
+var {Streamer} = require('../models/streamerModel')
+
 module.exports = {
     list:(req, res) => { // Return List of all streamers
-        res.send('NOT IMPLEMENTED: streamer list')
+        Streamer.find()
+            .then(streamers => res.send(streamers), e => res.status(400).send(e))
     },
     detail:(req, res) => { // Render detail of specific streamer
         res.send('NOT IMPLEMENTED: streamer detail')
@@ -9,7 +12,15 @@ module.exports = {
         res.send('NOT IMPLEMENTED: streamer register_get')
     },
     register:(req, res) => { // Post streamer to DB
-        res.send('NOT IMPLEMENTED: streamer create_post')
+        var his = req.body
+        var newStreamer = new Streamer({
+            "email": his.email,
+            "twitch.streamerName": his.streamerName,
+            "password": his.password
+        })
+
+        newStreamer.save()
+            .then(savedStreamer => res.send(savedStreamer), e => res.status(400).send(e, newStreamer))
     },
     delete_get:(req, res) => { // Render confirmation to delete streamer
         res.send('NOT IMPLEMENTED: streamer delete_get')

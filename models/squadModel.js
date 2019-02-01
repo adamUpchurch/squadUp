@@ -30,4 +30,4 @@ var SquadSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Squad', SquadSchema)
+module.exports.Squad = mongoose.model('Squad', SquadSchema)
