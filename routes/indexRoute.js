@@ -7,6 +7,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/ninja', (req, res, next) => {
+  
+  // TODO: Make this route dynamic to accept either a squad or streamer name
+  // Return profile of user/squad
+
   res.render('stream', {streamers: ['drlupo', 'ninja', 'ninja', 'ninja']})
 })
 
