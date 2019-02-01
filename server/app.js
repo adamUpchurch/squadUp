@@ -2,11 +2,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var db = require('./db/mongoose')
+var db = require('../server/db/mongoose')
 
-var indexRouter = require('./routes/indexRoute');
-var streamerRouter = require('./routes/streamerRoute');
-var squadRouter = require('./routes/squadRoute');
+var indexRouter = require('../server/routes/indexRoute');
+var streamerRouter = require('../server/routes/streamerRoute');
+var squadRouter = require('../server/routes/squadRoute');
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/streamer', streamerRouter);
-app.use('/squad', squadRouter);
+app.use('/api/streamer', streamerRouter);
+app.use('/api/squad', squadRouter);
 
 module.exports = app;

@@ -3,7 +3,7 @@ var router = express.Router();
 var squad = require('../controllers/squadController')
 
 
-router.route('/')
+router.route('/') // routes complete
   .get(squad.list)
   .post(squad.create)
 

@@ -9,18 +9,18 @@ var SquadSchema = new Schema({
         unique: true
     },
     admin: [{
-            type: Schema.Types.ObjectID,
-            required: true,
-            ref: 'Streamer'
+            type: Schema.Types.ObjectId,
+            ref: 'Streamer',
+            required: true
     }],
     members: [{
-            type: Schema.Types.ObjectID,
-            required: true,
-            ref: 'Streamer'
+            type: Schema.Types.ObjectId,
+            ref: 'Streamer',
+            required: true
     }],
     stream: {
         current: [{
-            type: Schema.Types.ObjectID,
+            type: Schema.Types.ObjectId,
             ref: 'Streamer'
         }],
         isActive: {
