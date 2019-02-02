@@ -1,16 +1,19 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var db = require('../server/db/mongoose')
+var express         = require('express'),
+    path            = require('path'),
+    cookieParser    = require('cookie-parser'),
+    logger          = require('morgan'),
+    db              = require('../server/db/mongoose'),
+    passportSetUp   = require('../config/passport-setup');
 
-var indexRouter = require('../server/routes/indexRoute');
-var streamerRouter = require('../server/routes/streamerRoute');
-var squadRouter = require('../server/routes/squadRoute');
+var indexRouter     = require('../server/routes/indexRoute'),
+    streamerRouter  = require('../server/routes/streamerRoute'),
+    squadRouter     = require('../server/routes/squadRoute'),
+    authRouter      = require('../server/routes/authorization');
 
 var app = express();
 
 app.set('views', __dirname + '/views');
+console.log(__dirname)
 app.set('view engine', 'js');
 app.engine('js', require('express-react-views').createEngine());
 
@@ -23,5 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/streamer', streamerRouter);
 app.use('/api/squad', squadRouter);
+app.use('/auth', authRouter)
 
 module.exports = app;
