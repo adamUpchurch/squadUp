@@ -1,7 +1,7 @@
 var    mongoose        = require('mongoose'),
-       mongoDB         = 'mongodb://adam:tucker49@ds117145.mlab.com:17145/squadup';
+       {MongoDB}         = require('../../config/keys')
 
-mongoose.connect(mongoDB);
+mongoose.connect(MongoDB.dbURI);
 mongoose.Promise = global.Promise;
 
 var db = mongoose.connection;
