@@ -7,11 +7,13 @@ const   passport        = require('passport'),
 passport.use(new TwitchStrategy({
     clientID: Twitch.id,
     clientSecret: Twitch.secret,
-    callbackURL: '/auth/twitchtv/callback',
+    callbackURL: '/auth/twitch/redirect',
     scope: 'user_read'
 },
 (accessToken, refreshToken, profile, done) => {
-    User.findOrCreate({ twitchtvId: profile.id }, (err, user) => {
-        return done(err, user)
-    })
+    console.log(profile)
+    return done(profile)
+    // User.findOrCreate({ twitchtvId: profile.id }, (err, user) => {
+    //     return done(err, user)
+    // })
 }))

@@ -10,6 +10,9 @@ router.get('/twitch', passport.authenticate('twitchtv'),
         res.send('Logged in with twitch.')
 })
 
+router.get('/twitch/redirect', passport.authenticate('twitchtv'), (req, res) => {
+})
+
 router.get('/logout', (req, res) => {
     res.send('Logging out')
 })
