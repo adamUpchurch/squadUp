@@ -4,33 +4,35 @@ const   mongoose    = require('mongoose'),
 var Schema = mongoose.Schema;
 
 var StreamerSchema = new Schema({
-    email: {
-        type: String,
-        required: true,
-        minLength: 1,
-        trim: true,
-        unique: true,
-        validate: {
-            validator: validator.isEmail,
-            message: `{value is not a valid email}`
-        }
-    },
     twitch: {
-        streamerName: {
-            type: String,
-            minLength: 3,
-            trim: true,
-            unique: true,
-        }
+        display_name: String,
+        _id: Number,
+        name: String,
+        type: String,
+        bio: String,
+        logo: String,
+        _links: {
+            self: String
+        },
+        email: String,
     },
     squad: {
         type: Schema.Types.ObjectId,
         ref: 'Squad'
     },
-    password: {
-        type: String,
-        require: true,
-        minLength: 6
+    isStreaming: {
+        currently: Boolean,
+        with: [String],
+        featured: Boolean,
+        game: String,
+        isMature: Boolean,
+
+    },
+    info: {
+        log_ins: {
+            type: Number,
+            default: 0
+        }
     },
     tokens: [{
         access: {

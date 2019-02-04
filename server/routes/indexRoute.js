@@ -1,8 +1,9 @@
-var router = require('express').Router();
+var router = require('express').Router(),
+    passport    = require('passport');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  res.render('index', { title: 'SQUADUP.gg', name: 'Adam' });
+router.get('/', (req, res) => {
+  res.render('index', { title: 'SQUADUP.gg', name: 'req.user' });
 });
 
 router.get('/ninja', (req, res, next) => {

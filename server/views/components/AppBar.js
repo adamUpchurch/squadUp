@@ -7,6 +7,7 @@ const AppBar = props => (
       <ul id="nav-mobile" className="right hide-on-med-and-down">
         <li><a href="collapsible.html">Browse</a></li>
         <li><a href='/auth/twitch'>Login</a></li>
+        <li><a href='/auth/logout'>Logout</a></li>
       </ul>
     </div>
   </nav>
