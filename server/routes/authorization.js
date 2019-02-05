@@ -7,7 +7,7 @@ router.get('/twitch', passport.authenticate('twitchtv'),
 
 router.get('/twitch/redirect', passport.authenticate('twitchtv'), (req, res) => {
     console.log(req.user);
-    res.redirect('/accountPage')
+    res.redirect('/profile')
 })
 
 router.get('/logout', (req, res) => {

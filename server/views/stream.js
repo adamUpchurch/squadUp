@@ -24,16 +24,16 @@ class Stream extends React.Component {
   }
   
   render() {
-
-    const streams = this.props.streamers.map((streamer, index) => (  
+    console.log(this.props.squad)
+    const streams = this.props.squad.map((streamer, index) => (  
       <iframe
         src= {`http://player.twitch.tv/?channel=${streamer}&muted=true`}
         scrolling="no"
-        frameborder="0"
+        frameBorder="0"
         marginHeight='0'
         border='0'
         allowFullScreen="true"
-        style={singleStreamStyle(this.props.streamers.length === 1)}
+        style={singleStreamStyle(this.props.squad.length === 1)}
         >
       </iframe>
     ))

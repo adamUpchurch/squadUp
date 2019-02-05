@@ -19,7 +19,7 @@ class DefaultLayout extends React.Component {
     return (
       <html>
         <head>
-          <title>{this.props.title}</title>
+          <title>SQUADUP.gg - Squad Stream</title>
           <link 
             rel="stylesheet" 
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" 
@@ -31,8 +31,8 @@ class DefaultLayout extends React.Component {
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         </head>
         <body style={{margin: '0'}}>
-          <AppBar>
-            SQUADUP.gg
+          <AppBar title={this.props.title}>
+            
           </AppBar>
           {this.props.children}
         </body>
