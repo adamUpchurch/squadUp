@@ -8,12 +8,8 @@ var StreamerSchema = new Schema({
         display_name: String,
         _id: Number,
         name: String,
-        type: String,
         bio: String,
         logo: String,
-        _links: {
-            self: String
-        },
         email: String,
     },
     squad: {

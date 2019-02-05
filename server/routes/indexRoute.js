@@ -5,6 +5,10 @@ var router = require('express').Router(),
 router.get('/', (req, res) => {
   res.render('index', { title: 'SQUADUP.gg', name: 'req.user' });
 });
+router.get('/accountPage', (req, res) => {
+  console.log(req.user.twitch.displayname)
+  res.render('index', { title: 'SQUADUP.gg', name: req.user.twitch.display_name });
+});
 
 router.get('/ninja', (req, res, next) => {
   
