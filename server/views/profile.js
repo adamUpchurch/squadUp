@@ -8,6 +8,8 @@ class profile extends React.Component {
     console.log(user)
     return (
       <DefaultLayout title='Account'>
+        <a href='profile/edit'>edit</a>
+        <br></br>
         <img src={user.twitch.logo}></img>
         <h3>{user.twitch.name}</h3>
         <h5>{user.twitch.bio}</h5>
@@ -16,7 +18,7 @@ class profile extends React.Component {
         <ul>
           <li>Streaming with: </li>
           {user.isStreaming.with.map( teammate => {
-            <li>teammate</li>
+            return <li key={teammate}>{teammate}</li>
           })}
         </ul>
       </DefaultLayout>

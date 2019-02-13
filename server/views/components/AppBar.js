@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AppBar = props => (
+const AppBar = _ => (
   <nav>
     <div className="nav-wrapper">
       <a href="#" className="brand-logo left">SQUADUP.gg</a>
