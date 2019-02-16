@@ -1,5 +1,5 @@
 var React = require('react');
-var DefaultLayout = require('./layouts/default');
+var DefaultLayout = require('../layouts/default');
 
 var Input = props => (
     <div className={`input-field col ${props.colSize}`}>

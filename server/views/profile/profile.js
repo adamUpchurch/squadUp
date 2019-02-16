@@ -1,5 +1,5 @@
 var React = require('react');
-var DefaultLayout = require('./layouts/default');
+var DefaultLayout = require('../layouts/default');
 
 class profile extends React.Component {
   render() {

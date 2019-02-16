@@ -15,7 +15,7 @@ router.get('/profile/edit', (req, res) => {
 
 router.get('/profile', (req, res) => {
   console.log(req.user)
-  res.render('profile', { title: 'SQUADUP.gg', user: req.user });
+  res.render('profile/profile1', { title: 'SQUADUP.gg', user: req.user });
 });
 
 router.get('/gamer/:streamer', (req, res, next) => {
